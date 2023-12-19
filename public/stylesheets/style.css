@@ -1,8 +1,157 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('https://i.pinimg.com/originals/9a/2a/a3/9a2aa3ccba5c3bce83e2e3f0a607c147.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
 }
-
+header{
+  display:flex;
+  justify-content: center;
+}
+.main-items{
+  border: 3px solid #ea0404;
+  min-height: 50px;
+  height: 50px;
+  margin: 5px;
+}
+.both-items{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -12px;
+}
+.left-items{
+  display: flex;
+  padding: 8px;
+}
+.right-items{
+  display: flex;
+  padding: 8px;
+}
+nav li{
+  list-style: none;
+  color: #ffffff;
+  margin: 0;
+  position: relative;
+  padding: 8px;
+  display: flex;
+  height: 50px;
+  font-weight: bold;
+}
+.welcome-message{
+  border: 3px solid #ea0404;
+  min-height: 20px;
+  height: 20px;
+  margin: 5px;
+  padding: 8px;
+}
+.allimages{
+  display:flex;
+  align-items: center;
+  margin-left: 100px;
+  justify-content: space-evenly;
+  padding:8px;
+}
+.game-img1{
+  border: 3px solid #ea0404;
+  min-height: 103px;
+  height: 100px;
+}
+.game-img2{
+  border: 3px solid #ea0404;
+  min-height: 103px;
+  height: 100px;
+  margin-left: 10px;
+}
+.game-img3{
+  border: 3px solid #ea0404;
+  min-height: 103px;
+  height: 100px;
+  margin-left: 10px;
+}
+.game-img4{
+  border: 3px solid #ea0404;
+  min-height: 103px;
+  height: 100px;
+  margin-left: 10px;
+}
+.game-img5{
+  border: 3px solid #ea0404;
+  min-height: 103px;
+  height: 100px;
+  margin-left: 10px;
+}
+.match{
+  display:flex;
+  align-items: center;
+  margin-left: 100px;
+  padding:8px;
+  justify-content: space-between;
+  margin-top: -4px;
+}
+.allmatches{
+  border: 3px solid #ea0404;
+  min-height: 50px;
+  height: 50px;
+  margin: 5px;
+}
+.left-info-match{
+  display:flex;
+  padding: 8px;
+}
+.soul-img{
+ margin-left: 8px;
+}
+.user{
+  margin-left: 8px;
+}
+.avatar-img{
+  margin-left: 8px;
+}
+.lvl{
+  margin-left: 8px;
+}
+.tr{
+  display: table-row;
+}
+.left-info-match{
+  display:flex;
+  align-items: flex-start;
+}
+.center-info-match{
+  display:flex;
+  padding: 8px;
+}
+.right-info-match{
+  display:flex;
+  padding: 8px;
+}
+.dropdown-content{
+  position: absolute;
+  top: 55px;
+  width: 100%;
+  display: none;
+  z-index: 20;
+  height: 50px;
+}
+nav li:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a {
+  font-weight: bold;
+}
+.dropdown-content ul {
+  flex-direction: column;
+}
+.everything{
+  border: 3px solid #ea0404;
+  min-height: 50px;
+  height: 50px;
+  margin: 5px;
+  float: left;
+}
 a {
   color: #00B7FF;
 }
