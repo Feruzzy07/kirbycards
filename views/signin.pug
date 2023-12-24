@@ -2,20 +2,20 @@ extends layout
 
 block content
     header.game-name
-        img(src='https://pm1.aminoapps.com/6393/1b8459b5e0526cc9aad9520edad831d4cde8c9fa_00.jpg' width="336" height="120")
+        img(src='https://media.discordapp.net/attachments/860255587089776653/1188363477073526784/image.png?ex=659a40bb&is=6587cbbb&hm=82c3feffa525712e02f6c0f3aa07cabacfa5a6c1fcfd46cef57cf00690e21de9&=&format=webp&quality=lossless&width=1267&height=286' width="336" height="120")
     div.top-body
         nav.main-items
             div.both-items
                 ul.left-items
                     li
-                        a(href='#') Home
+                        a(href='/') Home
                     li
-                        a(href='#') Play
+                        a(href='/crafting') Play
                 ul.right-items
                     li
-                        a(href='#') Sign In
+                        a(href='/signin') Sign In
                     li
-                        a(href='#') Register
+                        a(href='/register') Register
     h2.sign-in Sign In
     form.allinfo(method="post" action="signin")
         div.form-info
@@ -28,6 +28,8 @@ block content
             input(name='stayconneted' id='stayconnected' type='checkbox')
             label(for='stayconnected') Remember Me
         button(type='submit') Submit
+    h4 Dont have an account?
+        a(href='/register') Make One
     footer
         div.bottom-body
             nav.main-items

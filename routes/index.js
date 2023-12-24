@@ -4,10 +4,16 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('crafting');
+  res.render('index');
 });
-router.post('/signin', function(req, res){
+router.get('/signin', function(req, res){
   res.render('signin');
+})
+router.get('/register', function(req, res){
+  res.render('register');
+})
+router.get('/crafting', function(req, res){
+  res.render('crafting');
 })
 
 module.exports = router;

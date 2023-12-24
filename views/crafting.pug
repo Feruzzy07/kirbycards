@@ -2,15 +2,15 @@ extends layout
 
 block content
     header.game-name
-        img(src='https://pm1.aminoapps.com/6393/1b8459b5e0526cc9aad9520edad831d4cde8c9fa_00.jpg' width="336" height="120")
+        img(src='https://media.discordapp.net/attachments/860255587089776653/1188363477073526784/image.png?ex=659a40bb&is=6587cbbb&hm=82c3feffa525712e02f6c0f3aa07cabacfa5a6c1fcfd46cef57cf00690e21de9&=&format=webp&quality=lossless&width=1267&height=286' width="336" height="120")
     div.top-body
         nav.main-items
             div.both-items
                 ul.left-items
                     li
-                        a(href='#') Home
+                        a(href='/') Home
                     li
-                        a(href='#') Play
+                        a(href='/crafting') Play
                     li
                         a Cards
                         a.dont-display Everything Here
@@ -19,7 +19,7 @@ block content
                                 li.content
                                     a(href='#') Decks
                                 li.content
-                                    a(href='#') Crafting
+                                    a(href='/crafting') Crafting
                                 li.content
                                     a(href='#') Friendship
                                 li.content
@@ -48,3 +48,22 @@ block content
                         li
                             a(href='#') Sign Out
     div.container
+        div.edit
+            a(href='#') Edit
+        div.card
+            div.card-header
+                div.card-title Froggit
+                div.card-cost 2
+            div.image-stuff
+                div.upper-content
+                div.card-image
+                    img(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABcCAMAAADUMSJqAAAAZlBMVEUAAAD///8yMjKGhoZ6enotLS3x8fHn5+ehoaG9vb2urq7W1tZPT0/5+fna2tpcXFxubm6AgIAgICB0dHQ6OjobGxtFRUVVVVWZmZnh4eHFxcUmJiZnZ2c/Pz/Q0NCnp6eOjo4QEBDYnA4nAAAEwUlEQVRoge2ZaRuqLBCG3UJFcanMrVz+/588bCICJlYfzrne9/lkON4hDMMMOs7/+u+ovwhd35hVwqo/AQ9doe6NWSSsBmu0P65st43Gxmx2jQYLK1WJuxVwZt1odu5bq9CZDWaKcoBclR5rVg8EgGIVAlAcsJ+NisbKiotiNRmsXPd2AFf7w5VbWT3fosuMjUmYF1Tl8lgr+0OTaCPHreA7+DIm7dIgKEiyGsxol8z9roqQs3xvaUqFL7cTb8rDtd8wrbHytSGcjGSsgBu0ntQmUHHKXK1Y+xn6zChp28UqOoAr09IK2Iv1fO23weoITh2q6bBuW/id/ITLiKMJu1AVdwNtvjUn4B25agxw4YV08no8HCl9+GENr9mVCS6CGqg43EXkKrWGE8sujgtnmnzwDl5BEomi+gyc9Jw2ubIuWzh7yCfXwxm4FzVkSAK4gccQwhHJP7Fj1Q2gUd8ezhW7B2r4u9j3fAmccuQrKoe/RVpJAR8hN8Zx/FpZw8egJArWfoMOuxvfnx54e+ukwJUEJX1VS7guupHyKOPxkZBF9ufXp3A8pH3CgRnU4ckwDNlbeF+V7o4G5/oSPzKnV+GSzPBx1/6UjPDnodt9Af8Nmnv+VlH3K3g7aNnL/q54Xgp6Z7iVrXw0tEHTc5lk0E9q/oaXJIzjuNyCglhv8+NYf1jepF/aXZL4Wct/OzJ39Vb0SB/sVgTCRSKTSUQToG53qdP0EVnDA3FLmgyR7kiLc81PlcCxB095vmzpm2ipKVq51QwPWZ5QBIU+T2Z4GWDhcA7lB8zw0dANC5Hue0a47C0go9pJYndFnpE7JPVcqxG+luyqPwqIZnjR/LTvQImMvwxcm9hC9Nzd4c6qC0q9MnK/n1ZcPQJkrHWruTrrgKoap6qqvUJ3hFTj/tZuUssfo4njsSxXPte7kweDLt4ZnTkN+YflTb6dyuMTEE358RwyoWOWqsHeEcPddNmsS2pap+HO4o0fl2PkKtNJDt6bb3udtzzYIvKgaf3AyUmjnb6fgJtDI62+s6/hSvbRsfyiJrd6Wk8hNTlEwHrUt3A0OhAtcOeCr0DrNEroRNbwzbwxNxaHEldXLc+ZVWXJnmINPmM4bKIoakgCvT1Y4K93dNzHtX1jpLeZSlDbkKu4G81kD1pcORs9A7fU3whvb4Gqm57gfAg3nZ1Gv4Gj/GGweeX59D0ckJrLexCRs8o7vaJ/pxywfwKnNSFbVcTjuQcyw+E7OJjwoi9iltCTWotFRYTLU7ySggl8A6eF4TJ5oSOHXHpc3H4Dx7wr4kOb08NJUdwgckxf5Z/Dh5GFwQwX5B07e76Imwn5WX8OJ1GWwKf1pvczeM7hQzQu5fQVjuMIfwl3lYha/RaeStvYzPIXBU7qicO9Lg10eNjJu9jcJQY4kX8L3vPloz8C7109c6DDQteAllHWe9wyS5IkVOBzURQ0lsTkbkY/Qs033Eg/dvVPJX9qkywwwrUKevOxjP2rltPqZyamDKnXrGT45LLIOy8nGvvw9XBcKNWyzLC9i7v1yEfTc7t6k+1Dw7mJlmboWaBkQmZwgS8foRZdtAd1uJrYhqXEmH1/Yk5W4Wpm+7G7KrWROYQnqsG+tGx+gf8Bx2pEDKORSJ0AAAAASUVORK5CYII=' width="125")
+                div.bottom-content
+            div.card-description
+                p This literally just attacks lol
+            div.last-row
+                div.dmg 3
+                div.rarity
+                    img(src='')
+                div.hp 3
+
