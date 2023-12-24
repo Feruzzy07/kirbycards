@@ -1,0 +1,59 @@
+extends layout
+
+block content
+    header.game-name
+        img(src='https://pm1.aminoapps.com/6393/1b8459b5e0526cc9aad9520edad831d4cde8c9fa_00.jpg' width="336" height="120")
+    div.top-body
+        nav.main-items
+            div.both-items
+                ul.left-items
+                    li
+                        a(href='#') Home
+                    li
+                        a(href='#') Play
+                ul.right-items
+                    li
+                        a(href='#') Sign In
+                    li
+                        a(href='#') Register
+    h2.sign-in Register
+    form.allinfo(method="post" action="register")
+        div.form-info
+            label(for='username') Username:
+        input.info(name='username' id='username' type='text' autocomplete="off")
+        div.form-info
+            label(for='mail') E-Mail:
+        input.info(name='mail' id='mail' type='text' autocomplete="off")
+        div.form-info
+            label(for='mailconfirm') E-Mail (confirm):
+        input.info(name='mailconfirm' id='mailconfirm' type='text' autocomplete="off")
+        div.form-info
+            label(for='password') Password:
+        input.info(name='password' id='password' type='text' autocomplete="off")
+        div.form-info
+            label(for='passwordconfirm') Password (confirm):
+        input.info(name='passwordconfirm' id='passwordconfirm' type='text' autocomplete="off")
+        div.form-info
+            input(name='terms' id='terms' type='checkbox')
+            label(for='terms') You agree to our
+                a(href='#') Terms and Conditions
+        button(type='submit') Submit
+    footer
+        div.top-body
+            nav.main-items
+                div.both-items
+                    ul.left-items
+                        li Kirbycards © 2023
+                        li Kirbycards by Fernando Ortega
+                    ul.right-items
+                        li
+                            a About Us
+                            a.dont-display Everything
+                            ul.dropdown-content-up
+                                div.border-content About Us
+                                    li.content
+                                        a(href='#') Staff
+                                    li.content
+                                        a(href='#') Legal
+                                    li.content
+                                        a(href='#') Mail

@@ -1,0 +1,49 @@
+extends layout
+
+block content
+    header.game-name
+        img(src='https://pm1.aminoapps.com/6393/1b8459b5e0526cc9aad9520edad831d4cde8c9fa_00.jpg' width="336" height="120")
+    div.top-body
+        nav.main-items
+            div.both-items
+                ul.left-items
+                    li
+                        a(href='#') Home
+                    li
+                        a(href='#') Play
+                ul.right-items
+                    li
+                        a(href='#') Sign In
+                    li
+                        a(href='#') Register
+    h2.sign-in Sign In
+    form.allinfo(method="post" action="signin")
+        div.form-info
+            label(for='login') Username or mail:
+        input.info(name='login' id='login' type='text' autocomplete="off")
+        div.form-info
+            label(for='pass') Password:
+        input.info(name='pass' id='pass' type='text' autocomplete="off")
+        div.form-info
+            input(name='stayconneted' id='stayconnected' type='checkbox')
+            label(for='stayconnected') Remember Me
+        button(type='submit') Submit
+    footer
+        div.bottom-body
+            nav.main-items
+                div.both-items
+                    ul.left-items
+                        li Kirbycards © 2023
+                        li Kirbycards by Fernando Ortega
+                    ul.right-items
+                        li
+                            a About Us
+                            a.dont-display Everything
+                            ul.dropdown-content-up
+                                div.border-content About Us
+                                    li.content
+                                        a(href='#') Staff
+                                    li.content
+                                        a(href='#') Legal
+                                    li.content
+                                        a(href='#') Mail

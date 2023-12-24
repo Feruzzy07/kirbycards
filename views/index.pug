@@ -7,11 +7,15 @@ block content
     nav.main-items
       div.both-items
         ul.left-items
-          li Home
-          li Play
+          li
+            a(href='#') Home
+          li
+            a(href='#') Play
         ul.right-items
-          li Sign In
-          li Register
+          li
+            a(href='#') Sign in
+          li
+            a(href='#') Register
   p.welcome-message
     span Welcome to the first website of kirbycards! No patch notes yet... :)
   table
@@ -101,3 +105,21 @@ block content
         td.right-info-match 0 : 34 /
           span STANDARD
   footer
+    div.top-body
+      nav.main-items
+        div.both-items
+          ul.left-items
+            li Kirbycards © 2023
+            li Kirbycards by Fernando Ortega
+          ul.right-items
+            li
+              a About Us
+              a.dont-display Everything
+              ul.dropdown-content-up
+                div.border-content About Us
+                  li.content
+                    a(href='#') Staff
+                  li.content
+                    a(href='#') Legal
+                  li.content
+                    a(href='#') Mail
