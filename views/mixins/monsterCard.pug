@@ -1,0 +1,33 @@
+mixin monsterCard(card)
+
+    div.card
+        div.card-header
+            div.card-title=card.name
+                div.edit
+                    a(href='#') Edit
+            div.card-cost=card.cost
+            div.line-1
+                img(src='https://cdn.discordapp.com/attachments/813640883424854046/1188547000359211008/Screen_Shot_2023-12-24_at_10.21.09_AM.png?ex=659aeba7&is=658876a7&hm=48a9bf3b8dd9afebf2ada2323f1dd9ac4fe5d9f752799ce5a1f552efff4f2c48&' height="42px" width="2px")
+        div.image-stuff
+            div.upper-content
+                img.stat3(src=card.stat3img width="20")
+                img.stat2(src=card.stat2img width="20")
+                img.stat1(src=card.stat1img width="20")
+            div.card-image
+                img(src=card.cardimg width="125")
+            div.bottom-content
+                img.tribe2(src=card.tribe2img width="20")
+                img.tribe1(src=card.tribe1img width="20")
+        div.card-description
+            p=card.description
+        div.last-row
+            div.dmg=card.dmg
+            div.line
+                img(src='https://cdn.discordapp.com/attachments/813640883424854046/1188547000359211008/Screen_Shot_2023-12-24_at_10.21.09_AM.png?ex=659aeba7&is=658876a7&hm=48a9bf3b8dd9afebf2ada2323f1dd9ac4fe5d9f752799ce5a1f552efff4f2c48&' height="42px" width="2px")
+            div.rarity
+                img(src=card.rarityimg width="20")
+            div.line
+                img(src='https://cdn.discordapp.com/attachments/813640883424854046/1188547000359211008/Screen_Shot_2023-12-24_at_10.21.09_AM.png?ex=659aeba7&is=658876a7&hm=48a9bf3b8dd9afebf2ada2323f1dd9ac4fe5d9f752799ce5a1f552efff4f2c48&' height="42px" width="2px")
+            div.hp=card.hp
+
+
