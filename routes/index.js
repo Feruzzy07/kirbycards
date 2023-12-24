@@ -15,5 +15,15 @@ router.get('/register', function(req, res){
 router.get('/crafting', function(req, res){
   res.render('crafting');
 })
+router.get('/staff', function(req, res){
+  res.render('staff');
+})
+router.get('/legal', function(req, res){
+  res.render('legal');
+})
+router.get('/mail', function(req, res){
+  res.render('mail');
+})
+
 
 module.exports = router;

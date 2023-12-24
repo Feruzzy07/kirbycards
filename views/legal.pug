@@ -13,35 +13,18 @@ block content
                         a(href='/crafting') Play
                 ul.right-items
                     li
-                        a(href='/signin') Sign In
+                        a(href='/signin') Sign in
                     li
                         a(href='/register') Register
-    h2.sign-in Register
-    form.allinfo(method="post" action="register")
-        div.form-info
-            label(for='username') Username:
-        input.info(name='username' id='username' type='text' autocomplete="off")
-        div.form-info
-            label(for='mail') E-Mail:
-        input.info(name='mail' id='mail' type='text' autocomplete="off")
-        div.form-info
-            label(for='mailconfirm') E-Mail (confirm):
-        input.info(name='mailconfirm' id='mailconfirm' type='text' autocomplete="off")
-        div.form-info
-            label(for='password') Password:
-        input.info(name='password' id='password' type='text' autocomplete="off")
-        div.form-info
-            label(for='passwordconfirm') Password (confirm):
-        input.info(name='passwordconfirm' id='passwordconfirm' type='text' autocomplete="off")
-        div.form-info
-            input(name='terms' id='terms' type='checkbox')
-            label(for='terms') You agree to our
-                a(href='#') Terms and Conditions
-        button(type='submit') Submit
-    h4 Already have an account?
-        a(href='/signin') Log in
+    h1 Legal Documents
+    li
+        a(href='#') Rules of Confidentiality
+    li
+        a(href='#') Legal Terms
+    li
+        a(href='#') Rules
     footer
-        div.top-body
+        div.legal-bottom-body
             nav.main-items
                 div.both-items
                     ul.left-items

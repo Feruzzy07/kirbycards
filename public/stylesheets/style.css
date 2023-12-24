@@ -14,6 +14,10 @@ header{
   position: relative;
   margin-top: 115px;
 }
+.legal-bottom-body{
+  position: relative;
+  margin-top: 300px;
+}
 .main-items{
   border: 3px solid #ea0404;
   min-height: 50px;
@@ -193,7 +197,7 @@ nav a:hover, nav a.active {
 .dropdown-content {
   position: absolute;
   top: 55px;
-  width: 80%;
+  width: 150px;
   display: none;
   z-index: 20;
   height: 50px;
@@ -202,7 +206,7 @@ nav a:hover, nav a.active {
   position: absolute;
   margin-bottom: 100px;
   bottom: 82px;
-  width: 80%;
+  width: 100px;
   display: none;
   z-index: 20;
   height: 50px;
@@ -325,6 +329,16 @@ nav li:hover .dropdown-content {
 .card-description{
   margin-top: 16px;
   border-top: 2px solid white;
+}
+.staff-stuff{
+  background-color: rgba(17, 24, 39, 0.25);
+}
+.admin-stuff{
+  display:flex;
+  align-items: center;
+}
+.email{
+  font-size: 16px;
 }
 a {
   color: #00B7FF;
