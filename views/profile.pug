@@ -1,4 +1,6 @@
-mixin monsterCard(card)
+extends layout1
+
+block content
 
     div(class=card.rarity)
         div.card-header
@@ -30,4 +32,27 @@ mixin monsterCard(card)
                 img(src='https://cdn.discordapp.com/attachments/813640883424854046/1188547000359211008/Screen_Shot_2023-12-24_at_10.21.09_AM.png?ex=659aeba7&is=658876a7&hm=48a9bf3b8dd9afebf2ada2323f1dd9ac4fe5d9f752799ce5a1f552efff4f2c48&' height="42px" width="2px")
             div.hp=card.hp
 
-
+    div
+        h3 Card Name: #{card.name}
+        h4 Cost: #{card.cost}
+        h4 Description: #{card.description}
+        h4 Dmg: #{card.dmg}
+        h4 Hp: #{card.hp}
+        h4 Rarity: #{card.rarity}
+    div.players
+        h4 Enrolled Players
+        table
+            thead
+                td
+                    th Username
+                    th Password
+                    th Email
+                    th
+            tbody
+                each player in card.players
+                    tr
+                        td=player.username
+                        td=player.password
+                        td=player.email
+                        td
+                            a(href=`/players/profile/${player.id}`) View Player

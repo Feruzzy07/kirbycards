@@ -1,0 +1,37 @@
+extends layout1
+include mixins/monsterCard
+block content
+    div.allcontainer
+        div.container
+            each card in player.cards
+                +monsterCard(card)
+        div.addCards
+            h4 #{player.username}'s Player Cards
+            form(action=`/decks/${deck.id}/add/` method='post')
+                select(name='card' id='card' autocomplete=off)
+                    each card in availableCards
+                        option(value=card.id) #{card.name}
+                button.button(type='submit') Update
+            h4 Cards in Deck
+                table
+                    thead
+                        tr
+                            th Card Name
+                            th Cost
+                            th Description
+                            th Dmg
+                            th Hp
+                            th Rarity
+                            th
+                    tbody
+                        each card in deck.cards
+                            tr
+                                td=card.name
+                                td=card.cost
+                                td=card.description
+                                td=card.dmg
+                                td=card.hp
+                                td=card.rarity
+                                td
+                                    a(href=`/cards/profile/${card.id}`) View Card
+                                    a(href=`/decks/${deck.id}/removeCard/${card.id}`) Remove Card

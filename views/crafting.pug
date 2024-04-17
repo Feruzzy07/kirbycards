@@ -1,73 +1,20 @@
-extends layout
+extends layout1
 
 block content
-    header.game-name
-        img(src='https://media.discordapp.net/attachments/860255587089776653/1188363477073526784/image.png?ex=659a40bb&is=6587cbbb&hm=82c3feffa525712e02f6c0f3aa07cabacfa5a6c1fcfd46cef57cf00690e21de9&=&format=webp&quality=lossless&width=1267&height=286' width="336" height="120")
-    div.top-body
-        nav.main-items
-            div.both-items
-                ul.left-items
-                    li
-                        a(href='/') Home
-                    li
-                        a(href='/crafting') Play
-                    li
-                        a Cards▿
-                        ul.dropdown-content
-                            div.border-content Card Stuff:
-                                li.content
-                                    a(href='#') Decks
-                                li.content
-                                    a(href='/crafting') Crafting
-                                li.content
-                                    a(href='#') Friendship
-                                li.content
-                                    a(href='#') Hub
-                    li
-                        a Shop▿
-                        ul.dropdown-content
-                            div.border-content Gameplay
-                                li.content
-                                    a(href='#') Packs
-                                li.content
-                                    a(href='#') Artifacts
-                            div.border-content Card Skins
-                                li.content
-                                    a(href='#') All Skins
-                                li.content
-                                    a(href='#') Your Shop
-                            div.border-content Cosmetic
-                                li.content
-                                    a(href='#') Cosmetic Shop
-                            div.border-content Contributor
-                                li.content
-                                    a(href='#') UCP
-                    li
-                        a(href='#' style="color: yellow;") Quests(0)
-                ul.right-items
-                    li
-                        a (PROFILE STUFF I GUESS)
-                        ul.dropdown-content
-                            div.border-content Settings
-                                li.content
-                                    a(href='#') Profile
-                                li.content
-                                    a(href='#') History
-                            div.border-content Customize
-                                li.content
-                                    a(href='#') Avatars
-                                li.content
-                                    a(href='#') Card Skins
-                                li.content
-                                    a(href='#') Profiles
-                                li.content
-                                    a(href='#') Frame Skins
-                            div.border-content Other
-                                li.content
-                                    a(href='#') Settings
-                        li
-                            a(href='/signin') Sign Out
     include mixins/monsterCard
+    div.container
+        form(action='/crafting' method='get')
+            div.form-input
+                label(for='rarity') Rarity
+                select(id='rarity' name='rarity' autocomplete='off')
+                    each rarity in rarities
+                        option(value=rarity selected = (rarity===searchRarity)) #{rarity}
+                div.form-input
+                    label(for='random') Random
+                    input(type='checkbox' name='random' id='random' checked=searchRandom)
+            button.button.save(type='submit') Filter
+        div.add-button-row
+            a.button.save(href="/add") Add Card
     div.container
         each card in cards
             +monsterCard(card)

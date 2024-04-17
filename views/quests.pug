@@ -1,0 +1,69 @@
+extends layout
+
+block content
+    header.game-name
+        img(src='https://media.discordapp.net/attachments/860255587089776653/1188363477073526784/image.png?ex=659a40bb&is=6587cbbb&hm=82c3feffa525712e02f6c0f3aa07cabacfa5a6c1fcfd46cef57cf00690e21de9&=&format=webp&quality=lossless&width=1267&height=286' width="336" height="120")
+    div.top-body
+        nav.main-items
+            div.both-items
+                ul.left-items
+                    li
+                        a(href='/') Home
+                    li
+                        a(href='/crafting') Play
+                    li
+                        a Cards▿
+                        ul.dropdown-content
+                            div.border-content Card Stuff:
+                                li.content
+                                    a(href='/decks') Decks
+                                li.content
+                                    a(href='/crafting') Crafting
+                                li.content
+                                    a(href='/friendship') Friendship
+                                li.content
+                                    a(href='/hub') Hub
+                    li
+                        a Shop▿
+                        ul.dropdown-content
+                            div.border-content Gameplay
+                                li.content
+                                    a(href='/packs') Packs
+                                li.content
+                                    a(href='/artifacts') Artifacts
+                            div.border-content Card Skins
+                                li.content
+                                    a(href='/allskins') All Skins
+                                li.content
+                                    a(href='/yourshop') Your Shop
+                            div.border-content Cosmetic
+                                li.content
+                                    a(href='/cosmeticshop') Cosmetic Shop
+                            div.border-content Contributor
+                                li.content
+                                    a(href='/ucp') UCP
+                    li
+                        a(href='/quests' style="color: yellow;") Quests(0)
+                ul.right-items
+                    li
+                        a (PROFILE STUFF I GUESS)
+                        ul.dropdown-content
+                            div.border-content Settings
+                                li.content
+                                    a(href='/profile') Profile
+                                li.content
+                                    a(href='/history') History
+                            div.border-content Customize
+                                li.content
+                                    a(href='/avatars') Avatars
+                                li.content
+                                    a(href='/cardskins') Card Skins
+                                li.content
+                                    a(href='/profiles') Profiles
+                                li.content
+                                    a(href='/frameskins') Frame Skins
+                            div.border-content Other
+                                li.content
+                                    a(href='/settings') Settings
+                        li
+                            a(href='/signin') Sign Out

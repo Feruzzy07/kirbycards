@@ -1,0 +1,37 @@
+extends ../layout1
+
+block content
+    div
+        h3 Username: #{player.username}
+        h4 Password: #{player.password}
+        h4 Email: #{player.email}
+    div.cards
+        h4 Player Cards
+        form(action=`/players/${player.id}/enroll/` method='post')
+            select(name='card' id='card' autocomplete=off)
+                each card in availableCards
+                    option(value=card.id) #{card.name}
+            button.button(type='submit') Enroll
+        h4 Cards
+        table
+            thead
+                tr
+                    th Card Name
+                    th Cost
+                    th Description
+                    th Dmg
+                    th Hp
+                    th Rarity
+                    th
+            tbody
+                each card in player.cards
+                    tr
+                        td=card.name
+                        td=card.cost
+                        td=card.description
+                        td=card.dmg
+                        td=card.hp
+                        td=card.rarity
+                        td
+                            a(href=`/cards/profile/${card.id}`) View Card
+                            a(href=`/players/${player.id}/removeCard/${card.id}`) Remove Card

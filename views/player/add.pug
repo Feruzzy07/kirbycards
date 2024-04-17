@@ -1,0 +1,5 @@
+extends ../layout
+
+block content
+    include ../mixins/playerForm
+    +playerForm(player, `/players/add`, `/players/`)

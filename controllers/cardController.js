@@ -1,3 +1,8 @@
+const {Card, Player, Deck, DeckCards} = require('../models')
+const rarities = ['Common', 'Rare', 'Epic', 'Legendary', 'DT'];
+const souls = ['Kindness', 'Bravery', 'Determination'];
+
+//View Renders
 module.exports.index = function(req, res){
     res.render('index');
 }
@@ -16,36 +21,246 @@ module.exports.legal = function(req, res){
 module.exports.mail = function(req, res){
     res.render('mail');
 }
-module.exports.viewAll = function(req, res, next){
-    const cards =[ {
-        id: 1,
-        name: 'Froggit',
-        cost: 2,
-        cardimg: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABcCAMAAADUMSJqAAAAZlBMVEUAAAD///8yMjKGhoZ6enotLS3x8fHn5+ehoaG9vb2urq7W1tZPT0/5+fna2tpcXFxubm6AgIAgICB0dHQ6OjobGxtFRUVVVVWZmZnh4eHFxcUmJiZnZ2c/Pz/Q0NCnp6eOjo4QEBDYnA4nAAAEwUlEQVRoge2ZaRuqLBCG3UJFcanMrVz+/588bCICJlYfzrne9/lkON4hDMMMOs7/+u+ovwhd35hVwqo/AQ9doe6NWSSsBmu0P65st43Gxmx2jQYLK1WJuxVwZt1odu5bq9CZDWaKcoBclR5rVg8EgGIVAlAcsJ+NisbKiotiNRmsXPd2AFf7w5VbWT3fosuMjUmYF1Tl8lgr+0OTaCPHreA7+DIm7dIgKEiyGsxol8z9roqQs3xvaUqFL7cTb8rDtd8wrbHytSGcjGSsgBu0ntQmUHHKXK1Y+xn6zChp28UqOoAr09IK2Iv1fO23weoITh2q6bBuW/id/ITLiKMJu1AVdwNtvjUn4B25agxw4YV08no8HCl9+GENr9mVCS6CGqg43EXkKrWGE8sujgtnmnzwDl5BEomi+gyc9Jw2ubIuWzh7yCfXwxm4FzVkSAK4gccQwhHJP7Fj1Q2gUd8ezhW7B2r4u9j3fAmccuQrKoe/RVpJAR8hN8Zx/FpZw8egJArWfoMOuxvfnx54e+ukwJUEJX1VS7guupHyKOPxkZBF9ufXp3A8pH3CgRnU4ckwDNlbeF+V7o4G5/oSPzKnV+GSzPBx1/6UjPDnodt9Af8Nmnv+VlH3K3g7aNnL/q54Xgp6Z7iVrXw0tEHTc5lk0E9q/oaXJIzjuNyCglhv8+NYf1jepF/aXZL4Wct/OzJ39Vb0SB/sVgTCRSKTSUQToG53qdP0EVnDA3FLmgyR7kiLc81PlcCxB095vmzpm2ipKVq51QwPWZ5QBIU+T2Z4GWDhcA7lB8zw0dANC5Hue0a47C0go9pJYndFnpE7JPVcqxG+luyqPwqIZnjR/LTvQImMvwxcm9hC9Nzd4c6qC0q9MnK/n1ZcPQJkrHWruTrrgKoap6qqvUJ3hFTj/tZuUssfo4njsSxXPte7kweDLt4ZnTkN+YflTb6dyuMTEE358RwyoWOWqsHeEcPddNmsS2pap+HO4o0fl2PkKtNJDt6bb3udtzzYIvKgaf3AyUmjnb6fgJtDI62+s6/hSvbRsfyiJrd6Wk8hNTlEwHrUt3A0OhAtcOeCr0DrNEroRNbwzbwxNxaHEldXLc+ZVWXJnmINPmM4bKIoakgCvT1Y4K93dNzHtX1jpLeZSlDbkKu4G81kD1pcORs9A7fU3whvb4Gqm57gfAg3nZ1Gv4Gj/GGweeX59D0ckJrLexCRs8o7vaJ/pxywfwKnNSFbVcTjuQcyw+E7OJjwoi9iltCTWotFRYTLU7ySggl8A6eF4TJ5oSOHXHpc3H4Dx7wr4kOb08NJUdwgckxf5Z/Dh5GFwQwX5B07e76Imwn5WX8OJ1GWwKf1pvczeM7hQzQu5fQVjuMIfwl3lYha/RaeStvYzPIXBU7qicO9Lg10eNjJu9jcJQY4kX8L3vPloz8C7109c6DDQteAllHWe9wyS5IkVOBzURQ0lsTkbkY/Qs033Eg/dvVPJX9qkywwwrUKevOxjP2rltPqZyamDKnXrGT45LLIOy8nGvvw9XBcKNWyzLC9i7v1yEfTc7t6k+1Dw7mJlmboWaBkQmZwgS8foRZdtAd1uJrYhqXEmH1/Yk5W4Wpm+7G7KrWROYQnqsG+tGx+gf8Bx2pEDKORSJ0AAAAASUVORK5CYII=',
+module.exports.decks = function(req, res){
+    res.render('decks');
+}
+module.exports.friendship = function(req, res){
+    res.render('friendship');
+}
+module.exports.hub = function(req, res){
+    res.render('hub');
+}
+module.exports.packs = function(req, res){
+    res.render('packs');
+}
+module.exports.allskins = function(req, res){
+    res.render('navbarshop/allskins');
+}
+module.exports.yourshop = function(req, res){
+    res.render('navbarshop/yourshop');
+}
+module.exports.cosmeticshop = function(req, res){
+    res.render('navbarshop/cosmeticshop');
+}
+module.exports.ucp = function(req, res){
+    res.render('navbarshop/ucp');
+}
+module.exports.profile = function(req, res){
+    res.render('navbarprofile/profile');
+}
+module.exports.profiles = function(req, res){
+    res.render('navbarprofile/profiles');
+}
+module.exports.history = function(req, res){
+    res.render('navbarprofile/history');
+}
+module.exports.avatars = function(req, res){
+    res.render('navbarprofile/avatars');
+}
+module.exports.cardskins = function(req, res){
+    res.render('navbarprofile/cardskins');
+}
+module.exports.frameskins = function(req, res){
+    res.render('navbarprofile/frameskins');
+}
+module.exports.settings = function(req, res){
+    res.render('navbarprofile/settings');
+}
+module.exports.artifacts = function(req,res){
+    res.render('navbarshop/artifacts');
+}
+module.exports.quests = function(req, res){
+    res.render('quests');
+}
+
+//Card View All
+module.exports.viewAll = async function(req, res, next){
+    let searchRarities = ['All'];
+    for(let i = 0; i<rarities.length; i++){
+        searchRarities.push(rarities[i]);
+    }
+    let cards;
+    let searchRarity = req.query.rarity || 'All';
+    let searchRandom = req.query.random || false;
+    if(searchRarity==='All'){
+        cards = await Card.findAll();
+    }else {
+        cards = await Card.findAll({
+            where: {
+                rarity: searchRarity
+            }
+        });
+    }
+    if(rarities.length > 0 && searchRandom){
+        let randomIndex = getRandomInt(rarities.length);
+        cards = [rarities[randomIndex]];
+    }
+    res.render('crafting', {cards, rarities:searchRarities, searchRarity, searchRandom});
+}
+module.exports.viewDeck = async function(req,res){
+    const players = await Player.findAll();
+    res.render('decks1', {players});
+}
+//View All Deck
+module.exports.viewAllDeck = async function(req, res, next){
+    const player = await Player.findByPk(req.params.id,{
+        include: 'cards'
+    });
+    const card = await Card.findByPk(req.params.id, {
+        include: 'decks',
+    });
+
+    const deck = await Deck.findByPk(req.params.id, {
+        include: 'cards',
+    });
+    const cards2 = await Card.findAll();
+    let availableCards = [];
+    for (let i=0; i<cards2.length; i++){
+        if(playerHasCard(player, cards2[i])){
+            availableCards.push(cards2[i]);
+        }
+    }
+
+    let searchRarities = ['All'];
+    for(let i = 0; i<rarities.length; i++){
+        searchRarities.push(rarities[i]);
+    }
+    let cards;
+    let searchRarity = req.query.rarity || 'All';
+    let searchRandom = req.query.random || false;
+    if(searchRarity==='All'){
+        cards = await Card.findAll();
+    }else {
+        cards = await Card.findAll({
+            where: {
+                rarity: searchRarity
+            }
+        });
+    }
+    if(rarities.length > 0 && searchRandom){
+        let randomIndex = getRandomInt(rarities.length);
+        cards = [rarities[randomIndex]];
+    }
+    res.render('decks', {cards, availableCards, card, deck, souls, rarities:searchRarities, searchRarity, searchRandom, player});
+}
+
+
+function playerHasCard(player, card){
+    for(let i=0; i<player.cards.length; i++){
+        if(card.id === player.cards[i].id){
+            return true
+        }
+    }
+    return false
+}
+
+//Render Edit Form
+module.exports.renderEditForm = async function(req, res, next){
+    const card = await Card.findByPk(
+        req.params.id
+    );
+    res.render('edit', {card, rarities});
+}
+
+//Update Card
+module.exports.updateCard = async function(req, res){
+    await Card.update(
+        {
+            name: req.body.name,
+            cost: req.body.cost,
+            cardimg: req.body.cardimg,
+            stat1img: req.body.stat1img,
+            stat2img: req.body.stat2img,
+            stat3img: req.body.stat3img,
+            tribe1img: req.body.tribe1img,
+            tribe2img: req.body.tribe2img,
+            description: req.body.description,
+            dmg: req.body.dmg,
+            rarityimg: req.body.rarityimg,
+            hp: req.body.hp,
+            rarity: req.body.rarity
+        },
+        {
+            where:
+                {
+                    id: req.params.id
+                }
+        });
+    res.redirect('/crafting');
+}
+
+//Delete Card
+module.exports.deleteCard = async function(req, res){
+    await Card.destroy(
+        {
+            where:
+                {
+                    id: req.params.id
+                }
+        });
+    res.redirect('/crafting');
+}
+
+//Render Add Form
+module.exports.renderAddForm = function(req, res){
+    const card = {
+        name: '',
+        cost: 1,
+        cardimg: '',
         stat1img: '',
         stat2img: '',
         stat3img: '',
-        tribe1img: 'https://static.wikia.nocookie.net/undertale/images/2/2f/Froggit_overworld.png/revision/latest/scale-to-width/360?cb=20211119162319',
+        tribe1img: '',
         tribe2img: '',
-        description: 'This literally just attacks lol',
-        dmg: 3,
-        rarityimg: 'https://www.pngkey.com/png/full/959-9599829_8bit-heart-undertale-freetoedit-8-bit-love-heart.png',
-        hp: 3
-    },
+        description: '',
+        dmg: 1,
+        rarityimg: '',
+        hp: 1,
+        rarity: rarities[0],
+    };
+    res.render('add', {card, rarities});
+}
+
+//Add Card
+module.exports.addCard = async function(req, res){
+    await Card.create(
         {
-            id: 2,
-            name: 'Froggit',
-            cost: 2,
-            cardimg: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABcCAMAAADUMSJqAAAAZlBMVEUAAAD///8yMjKGhoZ6enotLS3x8fHn5+ehoaG9vb2urq7W1tZPT0/5+fna2tpcXFxubm6AgIAgICB0dHQ6OjobGxtFRUVVVVWZmZnh4eHFxcUmJiZnZ2c/Pz/Q0NCnp6eOjo4QEBDYnA4nAAAEwUlEQVRoge2ZaRuqLBCG3UJFcanMrVz+/588bCICJlYfzrne9/lkON4hDMMMOs7/+u+ovwhd35hVwqo/AQ9doe6NWSSsBmu0P65st43Gxmx2jQYLK1WJuxVwZt1odu5bq9CZDWaKcoBclR5rVg8EgGIVAlAcsJ+NisbKiotiNRmsXPd2AFf7w5VbWT3fosuMjUmYF1Tl8lgr+0OTaCPHreA7+DIm7dIgKEiyGsxol8z9roqQs3xvaUqFL7cTb8rDtd8wrbHytSGcjGSsgBu0ntQmUHHKXK1Y+xn6zChp28UqOoAr09IK2Iv1fO23weoITh2q6bBuW/id/ITLiKMJu1AVdwNtvjUn4B25agxw4YV08no8HCl9+GENr9mVCS6CGqg43EXkKrWGE8sujgtnmnzwDl5BEomi+gyc9Jw2ubIuWzh7yCfXwxm4FzVkSAK4gccQwhHJP7Fj1Q2gUd8ezhW7B2r4u9j3fAmccuQrKoe/RVpJAR8hN8Zx/FpZw8egJArWfoMOuxvfnx54e+ukwJUEJX1VS7guupHyKOPxkZBF9ufXp3A8pH3CgRnU4ckwDNlbeF+V7o4G5/oSPzKnV+GSzPBx1/6UjPDnodt9Af8Nmnv+VlH3K3g7aNnL/q54Xgp6Z7iVrXw0tEHTc5lk0E9q/oaXJIzjuNyCglhv8+NYf1jepF/aXZL4Wct/OzJ39Vb0SB/sVgTCRSKTSUQToG53qdP0EVnDA3FLmgyR7kiLc81PlcCxB095vmzpm2ipKVq51QwPWZ5QBIU+T2Z4GWDhcA7lB8zw0dANC5Hue0a47C0go9pJYndFnpE7JPVcqxG+luyqPwqIZnjR/LTvQImMvwxcm9hC9Nzd4c6qC0q9MnK/n1ZcPQJkrHWruTrrgKoap6qqvUJ3hFTj/tZuUssfo4njsSxXPte7kweDLt4ZnTkN+YflTb6dyuMTEE358RwyoWOWqsHeEcPddNmsS2pap+HO4o0fl2PkKtNJDt6bb3udtzzYIvKgaf3AyUmjnb6fgJtDI62+s6/hSvbRsfyiJrd6Wk8hNTlEwHrUt3A0OhAtcOeCr0DrNEroRNbwzbwxNxaHEldXLc+ZVWXJnmINPmM4bKIoakgCvT1Y4K93dNzHtX1jpLeZSlDbkKu4G81kD1pcORs9A7fU3whvb4Gqm57gfAg3nZ1Gv4Gj/GGweeX59D0ckJrLexCRs8o7vaJ/pxywfwKnNSFbVcTjuQcyw+E7OJjwoi9iltCTWotFRYTLU7ySggl8A6eF4TJ5oSOHXHpc3H4Dx7wr4kOb08NJUdwgckxf5Z/Dh5GFwQwX5B07e76Imwn5WX8OJ1GWwKf1pvczeM7hQzQu5fQVjuMIfwl3lYha/RaeStvYzPIXBU7qicO9Lg10eNjJu9jcJQY4kX8L3vPloz8C7109c6DDQteAllHWe9wyS5IkVOBzURQ0lsTkbkY/Qs033Eg/dvVPJX9qkywwwrUKevOxjP2rltPqZyamDKnXrGT45LLIOy8nGvvw9XBcKNWyzLC9i7v1yEfTc7t6k+1Dw7mJlmboWaBkQmZwgS8foRZdtAd1uJrYhqXEmH1/Yk5W4Wpm+7G7KrWROYQnqsG+tGx+gf8Bx2pEDKORSJ0AAAAASUVORK5CYII=',
-            stat1img: '',
-            stat2img: '',
-            stat3img: '',
-            tribe1img: 'https://static.wikia.nocookie.net/undertale/images/2/2f/Froggit_overworld.png/revision/latest/scale-to-width/360?cb=20211119162319',
-            tribe2img: '',
-            description: 'This literally just attacks lol',
-            dmg: 3,
-            rarityimg: 'https://www.pngkey.com/png/full/959-9599829_8bit-heart-undertale-freetoedit-8-bit-love-heart.png',
-            hp: 3
-        }];
-    res.render('crafting', {cards});
+            name: req.body.name,
+            cost: req.body.cost,
+            cardimg: req.body.cardimg,
+            stat1img: req.body.stat1img,
+            stat2img: req.body.stat2img,
+            stat3img: req.body.stat3img,
+            tribe1img: req.body.tribe1img,
+            tribe2img: req.body.tribe2img,
+            description: req.body.description,
+            dmg: req.body.dmg,
+            rarityimg: req.body.rarityimg,
+            hp: req.body.hp,
+            rarity: req.body.rarity
+        });
+    res.redirect('/crafting');
+}
+
+//profile
+module.exports.viewProfile = async function(req, res){
+    const card = await Card.findByPk(req.params.id, {
+        include: 'players',
+    });
+    res.render('profile', {card})
+}
+
+//Randomizer
+function getRandomInt(max){
+    return Math.floor(Math.random() * max);
+}
+//player has soul
+
+function playerHasSoul(deck, soul){
+    for(let i=0; i<souls.length; i++){
+        if(deck.soul === souls[i]){
+            return true
+        }
+    }
+    return false
 }
